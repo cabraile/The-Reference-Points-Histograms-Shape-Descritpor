@@ -44,9 +44,6 @@ class Interface():
 							"A3", "kmeans"]);
 		lbl_step_size = QLabel("Step Size", self.widget);
 		self.qle_step_size = QLineEdit(self.widget);
-		lbl_H_index = QLabel("H index");
-		self.sld_H_index = QSlider(Qt.Horizontal);
-		self.ckb_merge_H = QCheckBox("Merge Histograms", self.widget);
 		self.ckb_pca = QCheckBox("PCA", self.widget);
 		# UI Layout
 		#  0 1 2 | 3 4 5
@@ -54,12 +51,12 @@ class Interface():
 		#1 i i i | i i i
 		#2 i i i | i i i
 		#3 l l l | l l l
-		#4 s t t | S c c
-		#5 b b . | c . .
+		#4 s t t | . . .
+		#5 b b . | . . .
 		
 		## Column 0 Widgets
 		self.layout.addWidget(lbl_cloud, 0, 0);
-		self.layout.addWidget(self.plt_cloud, 1, 0, 2, 3);
+		self.layout.addWidget(self.plt_cloud, 1, 0, 2, 2);
 		self.layout.addWidget(lbl_n_ref_pts, 3, 0);
 		self.layout.addWidget(self.spb_n_ref_pts, 4, 0);
 		self.layout.addWidget(self.btn_read_file, 5, 0);
@@ -72,12 +69,8 @@ class Interface():
 		self.layout.addWidget(self.qle_step_size, 4, 2);
 		self.layout.addWidget(self.ckb_pca, 5, 2);
 		## Column 3 Widgets
-		self.layout.addWidget(lbl_curves, 0, 3);
-		self.layout.addWidget(self.plt_curves, 1, 3, 2, 3);
-		self.layout.addWidget(lbl_H_index, 3, 3);
-		self.layout.addWidget(self.sld_H_index, 4, 3);
-		# Column 4 Widgets
-		self.layout.addWidget(self.ckb_merge_H, 4,4);	
+		self.layout.addWidget(lbl_curves, 0, 2);
+		self.layout.addWidget(self.plt_curves, 1, 2, 2, 3);
 			
 		# UI Defaults
 		self.btn_compute.setEnabled(False);
@@ -87,11 +80,6 @@ class Interface():
 		self.spb_n_ref_pts.setMaximum(0);
 		self.spb_n_ref_pts.setSingleStep(1);
 		self.qle_step_size.setText("0.05");
-		self.sld_H_index.setTickPosition(QSlider.TicksBothSides);
-		self.sld_H_index.setMaximum(1);
-		self.sld_H_index.setTickInterval(1);
-		self.sld_H_index.setSingleStep(1);
-		self.sld_H_index.valueChanged.connect(self.update);
 		self.ckb_pca.clicked.connect(self.update);
 		return ;
 
@@ -114,7 +102,6 @@ class Interface():
 			# INDEX
 			for index in range(self.H.shape[0]):
 				cloud_subplot.scatter(self.Q[index,0], self.Q[index,1], self.Q[index,2], alpha=1.0);
-			#cloud_subplot.scatter(self.Q[:,0], self.Q[:,1], self.Q[:,2], c="red", alpha=1.0);
 		else:
 			self.H = None;
 		if(self.cloud is not None):
@@ -138,28 +125,6 @@ class Interface():
 				hist_subplot.plot(self.H[index]);
 				lgd_labels.append("H{}".format(index));
 			hist_subplot.legend(lgd_labels);
-
-			"""merge = self.ckb_merge_H.isChecked();
-			
-			if(not merge):
-				index = int(self.sld_H_index.value());
-				hist_subplot = self.plt_curves.getFigure().add_subplot(3,1,1);
-				hist_subplot.bar(np.arange(self.H.shape[1]),  self.H[index]);
-				hist_subplot.plot(self.H[index]);
-			else:
-				for index in range(self.H.shape[0]):
-					hist_subplot = self.plt_curves.getFigure().add_subplot(3,1,1);
-					hist_subplot.plot(self.H[index]);
-			hist_subplot = self.plt_curves.getFigure().add_subplot(3,1,2);
-			hist_subplot.bar(np.arange(self.H.shape[1]), 
-				np.average(self.H, axis=0), color="orange",  
-				yerr=np.std(self.H, axis=0));
-			hist_subplot.plot(np.average(self.H,axis=0) + np.std(self.H,axis=0),  c="blue");
-			hist_subplot.plot(np.average(self.H,axis=0) - np.std(self.H,axis=0),  c="blue");
-			hist_subplot.plot(np.average(self.H,axis=0), c="orange");
-			hist_subplot = self.plt_curves.getFigure().add_subplot(3,1,3);
-			hist_subplot.plot(entropy(self.H), c="black");
-			hist_subplot.plot(np.diff(entropy(self.H)), c="red");"""
 			
 		self.plt_cloud.draw();
 		self.plt_curves.draw();
@@ -186,10 +151,6 @@ class Interface():
 		# > Histograms
 		step_size = float(self.qle_step_size.text());
 		self.H = np.asarray(rphsd.compute_histograms(self.cloud, self.Q, step_size));	
-		# > Update
-		self.sld_H_index.setMaximum(self.H.shape[0]-1);
-		self.sld_H_index.setMinimum(0);
-		self.sld_H_index.setSingleStep(1);
 		
 		self.update();
 		return ;
