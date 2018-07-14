@@ -1,0 +1,80 @@
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_10/train-INCRARR_1_10_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_10/test-INCRARR_1_10_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8123620309050773
+==> DWNN
+> Accuracy: 0.8145695364238411
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_30/train-INCRARR_1_30_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_30/test-INCRARR_1_30_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8145695364238411
+==> DWNN
+> Accuracy: 0.8245033112582781
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_50/train-INCRARR_1_50_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_50/test-INCRARR_1_50_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8200883002207505
+==> DWNN
+> Accuracy: 0.8289183222958058
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_70/train-INCRARR_1_70_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_70/test-INCRARR_1_70_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8222958057395143
+==> DWNN
+> Accuracy: 0.8289183222958058
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_100/train-INCRARR_1_100_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/1_100/test-INCRARR_1_100_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8156732891832229
+==> DWNN
+> Accuracy: 0.8278145695364238
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_10/train-INCRARR_27_10_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_10/test-INCRARR_27_10_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8123620309050773
+==> DWNN
+> Accuracy: 0.8178807947019867
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_30/train-INCRARR_27_30_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_30/test-INCRARR_27_30_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8233995584988962
+==> DWNN
+> Accuracy: 0.8388520971302428
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_50/train-INCRARR_27_50_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_50/test-INCRARR_27_50_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.7991169977924945
+==> DWNN
+> Accuracy: 0.8101545253863135
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_70/train-INCRARR_27_70_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_70/test-INCRARR_27_70_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.8035320088300221
+==> DWNN
+> Accuracy: 0.8090507726269316
+==================================
+Train: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_100/train-INCRARR_27_100_complete.arff
+Test: /home/braile/Workspace/RPHSD/Results/Original-MNCpp/27_100/test-INCRARR_27_100_complete.arff
+==================================
+==> KNN
+> Accuracy: 0.7958057395143487
+==> DWNN
+> Accuracy: 0.8145695364238411
