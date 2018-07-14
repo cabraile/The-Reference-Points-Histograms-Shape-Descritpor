@@ -19,6 +19,7 @@ The method's complexity is _O(kn)_, where _k_ is the number of reference points 
 Located in the folder `VisTool`, the visualization tool enables the user to see the histograms and the reference points for each point cloud on an interactive interface (Figure 1). This tool still works only with ASCII pcd files.
 
 ![](readme-img/vistool_interface.png)
+_Figure 1. VisTool interface._
 
 This tool was developed in Python 3.6.5.
 
