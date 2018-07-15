@@ -1,3 +1,0 @@
-/home/braile/Workspace/Original-RPHSD/MN-DS/.build/CMakeFiles/rebuild_cache.dir
-/home/braile/Workspace/Original-RPHSD/MN-DS/.build/CMakeFiles/main.dir
-/home/braile/Workspace/Original-RPHSD/MN-DS/.build/CMakeFiles/edit_cache.dir

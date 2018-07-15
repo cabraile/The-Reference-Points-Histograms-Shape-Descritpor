@@ -69,7 +69,6 @@ inline std::vector<Histogram> histograms(
 
 /* ----------------------------------------------------------------------------
 Extracts features from the obtained histograms.
-Warning: H should be sorted for effectiveness.
 Usage:
 """
 // > Create a list of feature functions, as avg, stdev, etc
@@ -139,8 +138,6 @@ inline Descriptor getDescriptor(
 			// > The function requires a list of histograms
 			(*)(const std::vector<Histogram> &)
 	> & func_list,
-	// > Sorting function
-	
 	// > Max distance: from (-1,-1,-1) to (1,1,1)
 	const double & max_distance=3.47//3.465
 
